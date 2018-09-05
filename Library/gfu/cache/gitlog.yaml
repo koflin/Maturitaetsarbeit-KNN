@@ -1,0 +1,785 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -530159753, guid: 68c7e4565cde54155bb78d8e935f1dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 3
+  lastUpdatedAtString: 2018-09-05T16:49:22.617+02:00
+  initializedAtString: 2018-09-05T16:14:27.980+02:00
+  log:
+  - commitID: 9f768f8631f567f796499947db4a7b9605a30f76
+    mergeA: 
+    mergeB: 
+    authorName: koflin
+    authorEmail: colin.pfingstl@hotmail.ch
+    commitEmail: colin.pfingstl@hotmail.ch
+    commitName: koflin
+    summary: Test
+    description: Test
+    timeString: 2018-09-05T16:46:46.000+02:00
+    commitTimeString: 2018-09-05T16:46:46.000+02:00
+    changes:
+    - path: .gitattributes
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\.gitattributes
+      projectPath: .gitattributes
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: .gitignore
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\.gitignore
+      projectPath: .gitignore
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\.gitignore
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\.gitignore
+      projectPath: Assets\.gitignore
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Example Scene.unity
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Example
+        Scene.unity
+      projectPath: Assets\Example Scene.unity
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Example Scene.unity.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Example
+        Scene.unity.meta
+      projectPath: Assets\Example Scene.unity.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials.meta
+      projectPath: Assets\Materials.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Brown Stony Light.mat
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Brown
+        Stony Light.mat
+      projectPath: Assets\Materials\Brown Stony Light.mat
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Brown Stony Light.mat.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Brown
+        Stony Light.mat.meta
+      projectPath: Assets\Materials\Brown Stony Light.mat.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Brown Stony.mat
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Brown
+        Stony.mat
+      projectPath: Assets\Materials\Brown Stony.mat
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Brown Stony.mat.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Brown
+        Stony.mat.meta
+      projectPath: Assets\Materials\Brown Stony.mat.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Grass.mat
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Grass.mat
+      projectPath: Assets\Materials\Grass.mat
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Grass.mat.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Grass.mat.meta
+      projectPath: Assets\Materials\Grass.mat.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Grey Stones.mat
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Grey
+        Stones.mat
+      projectPath: Assets\Materials\Grey Stones.mat
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Grey Stones.mat.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Grey
+        Stones.mat.meta
+      projectPath: Assets\Materials\Grey Stones.mat.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Sandy Orange.mat
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Sandy
+        Orange.mat
+      projectPath: Assets\Materials\Sandy Orange.mat
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Sandy Orange.mat.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Sandy
+        Orange.mat.meta
+      projectPath: Assets\Materials\Sandy Orange.mat.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Sandy.mat
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Sandy.mat
+      projectPath: Assets\Materials\Sandy.mat
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Sandy.mat.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Sandy.mat.meta
+      projectPath: Assets\Materials\Sandy.mat.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Water Deep Blue.mat
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Water
+        Deep Blue.mat
+      projectPath: Assets\Materials\Water Deep Blue.mat
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Water Deep Blue.mat.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Water
+        Deep Blue.mat.meta
+      projectPath: Assets\Materials\Water Deep Blue.mat.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Water Light Blue.mat
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Water
+        Light Blue.mat
+      projectPath: Assets\Materials\Water Light Blue.mat
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Materials\Water Light Blue.mat.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Materials\Water
+        Light Blue.mat.meta
+      projectPath: Assets\Materials\Water Light Blue.mat.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Palettes.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Palettes.meta
+      projectPath: Assets\Palettes.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Palettes\Ground.prefab
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Palettes\Ground.prefab
+      projectPath: Assets\Palettes\Ground.prefab
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Palettes\Ground.prefab.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Palettes\Ground.prefab.meta
+      projectPath: Assets\Palettes\Ground.prefab.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins.meta
+      projectPath: Assets\Plugins.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub.meta
+      projectPath: Assets\Plugins\GitHub.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor.meta
+      projectPath: Assets\Plugins\GitHub\Editor.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.mdb.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.mdb.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.mdb.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\ICSharpCode.SharpZipLib.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\ICSharpCode.SharpZipLib.dll
+      projectPath: Assets\Plugins\GitHub\Editor\ICSharpCode.SharpZipLib.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\ICSharpCode.SharpZipLib.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\ICSharpCode.SharpZipLib.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\ICSharpCode.SharpZipLib.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\System.Threading.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\System.Threading.dll
+      projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\credits.txt
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\credits.txt
+      projectPath: Assets\Plugins\GitHub\Editor\credits.txt
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\credits.txt.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\credits.txt.meta
+      projectPath: Assets\Plugins\GitHub\Editor\credits.txt.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\eula.txt
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\eula.txt
+      projectPath: Assets\Plugins\GitHub\Editor\eula.txt
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\eula.txt.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\eula.txt.meta
+      projectPath: Assets\Plugins\GitHub\Editor\eula.txt.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\libsfw.bundle
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\libsfw.bundle
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\libsfw.so
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\libsfw.so
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.so
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\sfw.net.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\sfw.net.dll
+      projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\x64.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\x64.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\x86.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\x86.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Scenes.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Scenes.meta
+      projectPath: Assets\Scenes.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Scenes\SampleScene.unity
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Scenes\SampleScene.unity
+      projectPath: Assets\Scenes\SampleScene.unity
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Scenes\SampleScene.unity.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Scenes\SampleScene.unity.meta
+      projectPath: Assets\Scenes\SampleScene.unity.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures.meta
+      projectPath: Assets\Textures.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Brown Stony Light.png
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Brown
+        Stony Light.png
+      projectPath: Assets\Textures\Brown Stony Light.png
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Brown Stony Light.png.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Brown
+        Stony Light.png.meta
+      projectPath: Assets\Textures\Brown Stony Light.png.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Brown Stony.png
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Brown
+        Stony.png
+      projectPath: Assets\Textures\Brown Stony.png
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Brown Stony.png.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Brown
+        Stony.png.meta
+      projectPath: Assets\Textures\Brown Stony.png.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Grass.png
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Grass.png
+      projectPath: Assets\Textures\Grass.png
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Grass.png.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Grass.png.meta
+      projectPath: Assets\Textures\Grass.png.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Grey Stones.png
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Grey
+        Stones.png
+      projectPath: Assets\Textures\Grey Stones.png
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Grey Stones.png.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Grey
+        Stones.png.meta
+      projectPath: Assets\Textures\Grey Stones.png.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Lava.png
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Lava.png
+      projectPath: Assets\Textures\Lava.png
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Lava.png.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Lava.png.meta
+      projectPath: Assets\Textures\Lava.png.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Sandy Orange.png
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Sandy
+        Orange.png
+      projectPath: Assets\Textures\Sandy Orange.png
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Sandy Orange.png.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Sandy
+        Orange.png.meta
+      projectPath: Assets\Textures\Sandy Orange.png.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Sandy.png
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Sandy.png
+      projectPath: Assets\Textures\Sandy.png
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Sandy.png.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Sandy.png.meta
+      projectPath: Assets\Textures\Sandy.png.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Water Deep Blue.png
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Water
+        Deep Blue.png
+      projectPath: Assets\Textures\Water Deep Blue.png
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Water Deep Blue.png.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Water
+        Deep Blue.png.meta
+      projectPath: Assets\Textures\Water Deep Blue.png.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Water Light Blue.png
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Water
+        Light Blue.png
+      projectPath: Assets\Textures\Water Light Blue.png
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Textures\Water Light Blue.png.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Textures\Water
+        Light Blue.png.meta
+      projectPath: Assets\Textures\Water Light Blue.png.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Tiles.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Tiles.meta
+      projectPath: Assets\Tiles.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Tiles\Grey Stones.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Tiles\Grey
+        Stones.asset
+      projectPath: Assets\Tiles\Grey Stones.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Tiles\Grey Stones.asset.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Tiles\Grey
+        Stones.asset.meta
+      projectPath: Assets\Tiles\Grey Stones.asset.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Tiles\Lava.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Tiles\Lava.asset
+      projectPath: Assets\Tiles\Lava.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\Tiles\Lava.asset.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\Tiles\Lava.asset.meta
+      projectPath: Assets\Tiles\Lava.asset.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\read me.txt
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\read
+        me.txt
+      projectPath: Assets\read me.txt
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Assets\read me.txt.meta
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Assets\read
+        me.txt.meta
+      projectPath: Assets\read me.txt.meta
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: Packages\manifest.json
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\Packages\manifest.json
+      projectPath: Packages\manifest.json
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\AudioManager.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\AudioManager.asset
+      projectPath: ProjectSettings\AudioManager.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\ClusterInputManager.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\ClusterInputManager.asset
+      projectPath: ProjectSettings\ClusterInputManager.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\DynamicsManager.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\DynamicsManager.asset
+      projectPath: ProjectSettings\DynamicsManager.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\EditorBuildSettings.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\EditorBuildSettings.asset
+      projectPath: ProjectSettings\EditorBuildSettings.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\EditorSettings.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\EditorSettings.asset
+      projectPath: ProjectSettings\EditorSettings.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\GraphicsSettings.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\GraphicsSettings.asset
+      projectPath: ProjectSettings\GraphicsSettings.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\InputManager.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\InputManager.asset
+      projectPath: ProjectSettings\InputManager.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\NavMeshAreas.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\NavMeshAreas.asset
+      projectPath: ProjectSettings\NavMeshAreas.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\NetworkManager.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\NetworkManager.asset
+      projectPath: ProjectSettings\NetworkManager.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\Physics2DSettings.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\Physics2DSettings.asset
+      projectPath: ProjectSettings\Physics2DSettings.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\PresetManager.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\PresetManager.asset
+      projectPath: ProjectSettings\PresetManager.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\ProjectSettings.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\ProjectSettings.asset
+      projectPath: ProjectSettings\ProjectSettings.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\ProjectVersion.txt
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\ProjectVersion.txt
+      projectPath: ProjectSettings\ProjectVersion.txt
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\QualitySettings.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\QualitySettings.asset
+      projectPath: ProjectSettings\QualitySettings.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\TagManager.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\TagManager.asset
+      projectPath: ProjectSettings\TagManager.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\TimeManager.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\TimeManager.asset
+      projectPath: ProjectSettings\TimeManager.asset
+      originalPath: 
+      status: 4
+      staged: 0
+    - path: ProjectSettings\UnityConnectSettings.asset
+      fullPath: D:\OneDrive\Projekte\Maturarbeit\Parcour Runner\Parcour Runner\ProjectSettings\UnityConnectSettings.asset
+      projectPath: ProjectSettings\UnityConnectSettings.asset
+      originalPath: 
+      status: 4
+      staged: 0
