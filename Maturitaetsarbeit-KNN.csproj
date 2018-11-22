@@ -325,6 +325,8 @@
     <Compile Include="Assets\Scripts\Training\OutputNeuron.cs" />
     <Compile Include="Assets\Scripts\Training\Population.cs" />
     <Compile Include="Assets\Scripts\Training\TrainingController.cs" />
+    <Compile Include="Assets\Scripts\Training\TrainingSession.cs" />
+    <Compile Include="Assets\Scripts\Training\UITraining.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />

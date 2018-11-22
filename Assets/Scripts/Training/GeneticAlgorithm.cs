@@ -19,20 +19,19 @@ public class GeneticAlgorithm : MonoBehaviour {
     public GameObject runnerPrefab;
     public Vector2 startingPosition;
     public bool running = false;
+    public UITraining ui;
 
     [Header("NN Stats")]
     public int generation = 1;
     public Population population;
+    public TrainingSession trainingSession;
 
-    [Header("UI")]
-    public GameObject statUI;
-    public Text statGeneration;
-    public Text statBestFitness;
-    public Text statDNA;
-
-    //Wirt am Anfag der Szene aufgerufen
+    //Wird am Anfag der Szene aufgerufen
     public void Start()
     {
+        ui = GetComponent<UITraining>();
+        trainingSession = new TrainingSession(null, populationSize, maxGenerations);
+
         GenerateRandomPopulation();
 
         running = true;
@@ -47,7 +46,7 @@ public class GeneticAlgorithm : MonoBehaviour {
             foreach (Individual individual in population.individuals)
             {
                 NeuralNetwork nn = individual.nn;
-                CharController cc = individual.gameObject.GetComponent<CharController>();
+                CharController cc = individual.GetGameObject().GetComponent<CharController>();
                 List<double> distances = cc.CalculateDistances();
 
                 if (!cc.IsCrashed())
@@ -124,6 +123,9 @@ public class GeneticAlgorithm : MonoBehaviour {
     //Evolvieren der Population
     public void Evolve()
     {
+        //Speichern der Population
+        trainingSession.AddGeneration(population);
+
         //Löschen der alten Population
         DespawnPopulation();
 
@@ -204,10 +206,21 @@ public class GeneticAlgorithm : MonoBehaviour {
     //Beenden des Trainings
     public void Finish()
     {
+        //Speichern der Session
+        trainingSession.Store();
+
         //Löschen der alten Population
         DespawnPopulation();
 
-        ShowStats();
+        //Wählen des besten Individuums
+        Individual bestIndividual = population.GetBestIndividual();
+
+        //Versteckt den Stuck Button da die Runde fertig ist
+        ui.HideButtonStuck();
+
+        //Zeigt die Statistiken am Schluss
+        ui.SetTrainingResults(generation, bestIndividual.GetFitness(), bestIndividual.nn.GetRoundedDNAString());
+        ui.ShowTrainingResults();
     }
 
     //Generierung einer zufälligen Population
@@ -268,7 +281,7 @@ public class GeneticAlgorithm : MonoBehaviour {
         foreach (Individual individual in population.individuals)
         {
             //Zerstören eines einzelnen Individuums
-            Destroy(individual.gameObject);
+            Destroy(individual.GetGameObject());
         }
     }
 
@@ -309,19 +322,5 @@ public class GeneticAlgorithm : MonoBehaviour {
         }
 
         return length;
-    }
-
-    //Zeigt alle Statistiken am Schluss
-    private void ShowStats()
-    {
-        //Wählen des besten Individuums
-        Individual bestIndividual = population.GetBestIndividual();
-
-        //Anzeigen der Resultate
-        statGeneration.text = (generation).ToString();
-        statBestFitness.text = bestIndividual.GetFitness().ToString();
-        statDNA.text = bestIndividual.nn.GetRoundedDNAString();
-
-        statUI.SetActive(true);
     }
 }

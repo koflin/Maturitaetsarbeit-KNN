@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Individual {
 
-    public GameObject gameObject;
+    private GameObject gameObject;
     public bool hasCrahsed;
  
     public double fitness = 0;
@@ -14,6 +14,11 @@ public class Individual {
     {
         this.nn = nn;
         this.gameObject = gameObject;
+    }
+
+    public GameObject GetGameObject()
+    {
+        return gameObject;
     }
 
     public int GetFitness()

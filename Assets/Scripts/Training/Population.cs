@@ -20,7 +20,7 @@ public class Population {
     {
         foreach (Individual individual in individuals)
         {
-            if (individual.gameObject == gameObject)
+            if (individual.GetGameObject() == gameObject)
             {
                 return individual;
             }
