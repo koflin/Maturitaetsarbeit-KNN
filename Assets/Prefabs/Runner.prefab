@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 143997111892601092}
   - component: {fileID: 114760504762986162}
   - component: {fileID: 95827163874265768}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Runner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,11 +72,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a509f12a573b8304195fb8615013f3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  geneticAlgorithm: {fileID: 0}
+  manual: 1
   forwardSpeed: 0.05
   turnSpeed: 3
   tilemap: {fileID: 0}
   debugTile: {fileID: 11400000, guid: d1b342fef61aaa347843ce6e855e25a8, type: 2}
   raycastMaxDistance: 100
+  crashed: 0
 --- !u!143 &143997111892601092
 CharacterController:
   m_ObjectHideFlags: 1

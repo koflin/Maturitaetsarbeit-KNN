@@ -21,20 +21,21 @@ public class CharController : MonoBehaviour {
     [Header("Raycast")]
     public float raycastMaxDistance = 100f;
 
-    bool crashed = false;
+    public bool crashed = false;
 
+    //Urückgeben ob der Charakter einen Unfall hatte
     public bool IsCrashed()
     {
         return crashed;
     }
 
-	// Use this for initialization
 	void Start () {
         charController = GetComponent<CharacterController>();
+        charController.detectCollisions = false;
+
         animator = GetComponent<Animator>();
 	}
 	
-	// Update is called once per frame
 	void Update ()
     {
         if (!crashed)
@@ -42,11 +43,22 @@ public class CharController : MonoBehaviour {
             //tilemap.SetTile(new Vector3Int((int)Mathf.Floor(transform.position.x), (int)Mathf.Floor(transform.position.y), 0), debugTile);
             TileBase tileBase = tilemap.GetTile(new Vector3Int((int)Mathf.Floor(transform.position.x), (int)Mathf.Floor(transform.position.y), 0));
 
+
             if (tileBase == null || tileBase.name != "Grey Stones")
             {
                 if (!manual)
                 {
                     geneticAlgorithm.OnIndividualCrash(gameObject);
+                }
+
+                crashed = true;
+            }
+
+            else if (tileBase.name == "Finish")
+            {
+                if (!manual)
+                {
+                    geneticAlgorithm.OnIndividualEndReached(gameObject);
                 }
 
                 crashed = true;
@@ -72,6 +84,7 @@ public class CharController : MonoBehaviour {
         }
     }
 
+    //Bewegung
     public void Move(float horizontalInput)
     {
         if (charController != null)
@@ -81,6 +94,7 @@ public class CharController : MonoBehaviour {
         }
     }
 
+    //Messen der Richtungsabstände
     public List<double> CalculateDistances()
     {
         //It is important to call the raycast in FixedUpdate because of the fixed Interval!
@@ -102,6 +116,7 @@ public class CharController : MonoBehaviour {
         return new List<double> { GetRaycastHitValue(left), GetRaycastHitValue(leftFront), GetRaycastHitValue(front), GetRaycastHitValue(rightFront), GetRaycastHitValue(right) };
     }
 
+    //Kreieren des Raycasts
     RaycastHit2D CheckRaycastHit(Vector2 direction)
     {
         Vector2 startingPosition = transform.position;
@@ -110,6 +125,7 @@ public class CharController : MonoBehaviour {
         return Physics2D.Raycast(startingPosition, direction);
     }
 
+    //Zurückgeben der Distanz des Raycasts von der Wand
     private float GetRaycastHitValue(RaycastHit2D raycastHit)
     {
         if (raycastHit.collider != null)

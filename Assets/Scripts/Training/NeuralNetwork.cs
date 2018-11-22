@@ -12,19 +12,32 @@ public class NeuralNetwork {
      * DNA sieht wie folgt aus: Gewicht1.1 + Gewicht1.2 + Gewicht1.3 + Bias1 + Gewicht2.1 + Gewicht2.2 + Gewicht2.3 + Gewicht2.4 + Bias2 + .....
      */
 
-    public double[] DNA;
+    public List<double> DNA;
 
     //Der input Layer ist hier nicht enhalten!
     public List<Layer> layers = new List<Layer>();
 
-    public double[] GetDNAString()
+    //Zurückgeben des DNA Strangs
+    public List<double> GetDNA()
     {
         return DNA;
     }
-    
 
-    //Konstruktor des NN mit DNA String als Input
-    public NeuralNetwork(List<int> neuronAmounts, double[] dna)
+    //Zurückgeben des gerundeten DNA Strangs
+    public string GetRoundedDNAString()
+    {
+        List<double> roundedDNA = new List<double>();
+
+        foreach (double gene in DNA)
+        {
+            roundedDNA.Add(Mathf.Round((float)(gene * 100)) / 100);
+        }
+
+        return JsonMapper.ToJson(roundedDNA);
+    }
+    
+    //Konstruktor des NN mit vorgegebner DNA
+    public NeuralNetwork(List<int> neuronAmounts, List<double> dna)
     {
         this.neuronAmounts = neuronAmounts;
         this.DNA = dna;
@@ -32,20 +45,22 @@ public class NeuralNetwork {
         InitializeNNFromDNA();
     }
 
+    //Konstruktor des NN mit zufälliger DNA
     public NeuralNetwork(List<int> neuronAmounts, int size)
     {
         this.neuronAmounts = neuronAmounts;
-        DNA = new double[size];
+        DNA = new List<double>();
 
         for (int gene = 0; gene < size; gene++)
         {
             //Jedes Gen ist eine zufällige Zahl zwischen -5 und 5
-            DNA[gene] = Random.Range(-5f, 5f);
+            DNA.Add(Random.Range(-5f, 5f));
         }
 
         InitializeNNFromDNA();
     }
 
+    //Setzten der Gewichte und Biases mithilfe der DNA
     private void InitializeNNFromDNA()
     {
         int currentGenIndex = 0;
@@ -89,6 +104,7 @@ public class NeuralNetwork {
         }
     }
 
+    //Berechnung des Ouputs
     public double ComputeOutput(List<double> inputs)
     {
         List<double> outputs = inputs;

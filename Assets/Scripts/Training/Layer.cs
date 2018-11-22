@@ -11,6 +11,7 @@ public class Layer {
         this.neurons = new List<Neuron>();
     }
 
+    //Ouput berechnen
     public List<double> ComputeOutputs(List<double> inputs)
     {
         List<double> outputs = new List<double>();

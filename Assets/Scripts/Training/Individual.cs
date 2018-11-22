@@ -5,6 +5,7 @@ using UnityEngine;
 public class Individual {
 
     public GameObject gameObject;
+    public bool hasCrahsed;
  
     public double fitness = 0;
     public NeuralNetwork nn;
@@ -13,5 +14,15 @@ public class Individual {
     {
         this.nn = nn;
         this.gameObject = gameObject;
+    }
+
+    public int GetFitness()
+    {
+        return (int)fitness;
+    }
+
+    public void RoundFitness()
+    {
+        fitness = Mathf.RoundToInt((float)fitness);
     }
 }

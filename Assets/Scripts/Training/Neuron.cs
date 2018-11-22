@@ -7,12 +7,14 @@ public abstract class Neuron {
     public List<double> weights;
     public double bias;
 
+    //Konstruktor
 	public Neuron(List<double> weights, double bias)
     {
         this.weights = weights;
         this.bias = bias;
     }
 
+    //Berechnung des Outputs
     public double ComputeOutput(List<double> inputs)
     {
         double netInput = bias;
