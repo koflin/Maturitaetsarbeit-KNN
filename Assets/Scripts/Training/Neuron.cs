@@ -4,11 +4,21 @@ using UnityEngine;
 
 public abstract class Neuron {
 
+    /*
+     * Currently out of use
+     */
+
     public List<double> weights;
     public double bias;
 
+    //Konstruktor für die Desirialisierung
+    public Neuron()
+    {
+
+    }
+
     //Konstruktor
-	public Neuron(List<double> weights, double bias)
+    public Neuron(List<double> weights, double bias)
     {
         this.weights = weights;
         this.bias = bias;

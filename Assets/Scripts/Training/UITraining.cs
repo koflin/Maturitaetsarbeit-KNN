@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static MenuManager;
 
 public class UITraining : MonoBehaviour {
 
@@ -11,7 +11,7 @@ public class UITraining : MonoBehaviour {
     public Text statBestFitness;
     public Text statDNA;
     public GameObject buttonStuck;
-    public GameObject buttonBack;
+    public GameObject buttonQuit;
 
     public void SetTrainingResults(int generations, int bestFitness, string stringDNA)
     {
@@ -38,5 +38,20 @@ public class UITraining : MonoBehaviour {
     public void HideButtonStuck()
     {
         buttonStuck.SetActive(false);
+    }
+
+    public void ShowButtonQuit()
+    {
+        buttonQuit.SetActive(true);
+    }
+
+    public void HideButtonQuit()
+    {
+        buttonQuit.SetActive(false);
+    }
+
+    public void Quit()
+    {
+        SceneManager.LoadScene((int)SceneNumber.MENU_MAIN);
     }
 }

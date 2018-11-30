@@ -15,11 +15,13 @@ public class GeneticAlgorithm : MonoBehaviour {
     public int maxGenerations = 10;
 
     [Header("Unity Settings")]
+    public Vector2 spawn;
     public Tilemap path;
     public GameObject runnerPrefab;
-    public Vector2 startingPosition;
     public bool running = false;
     public UITraining ui;
+    public AI ai;
+    public string courseId;
 
     [Header("NN Stats")]
     public int generation = 1;
@@ -30,11 +32,6 @@ public class GeneticAlgorithm : MonoBehaviour {
     public void Start()
     {
         ui = GetComponent<UITraining>();
-        trainingSession = new TrainingSession(null, populationSize, maxGenerations);
-
-        GenerateRandomPopulation();
-
-        running = true;
     }
 
     //Wird in einem bestimmten Interval aufgerufen
@@ -61,6 +58,25 @@ public class GeneticAlgorithm : MonoBehaviour {
     }
 
     #region Events
+    //Wird aufgerufen sobald der Course geladen wurde
+    public void OnCourseLoaded(string courseId, GameObject course)
+    {
+        this.courseId = courseId;
+
+        spawn = course.transform.GetChild(2).position;
+        path = course.transform.GetChild(0).GetComponent<Tilemap>();
+    }
+
+    //WIrd aufgerufen sobald die Runde starten soll
+    public void OnStart(AI ai)
+    {
+        trainingSession = new TrainingSession(courseId);
+
+        GenerateRandomPopulation();
+
+        running = true;
+    }
+
     //Wird aufgerufen wenn ein Individuum in die Lava fällt
     public void OnIndividualCrash(GameObject physicalIndividual)
     {
@@ -207,7 +223,8 @@ public class GeneticAlgorithm : MonoBehaviour {
     public void Finish()
     {
         //Speichern der Session
-        trainingSession.Store();
+        //ai.AddSession(trainingSession);
+        //ai.Store();
 
         //Löschen der alten Population
         DespawnPopulation();
@@ -215,8 +232,9 @@ public class GeneticAlgorithm : MonoBehaviour {
         //Wählen des besten Individuums
         Individual bestIndividual = population.GetBestIndividual();
 
-        //Versteckt den Stuck Button da die Runde fertig ist
+        //Versteckt den Stuck und Quit Button da die Runde fertig ist
         ui.HideButtonStuck();
+        ui.HideButtonQuit();
 
         //Zeigt die Statistiken am Schluss
         ui.SetTrainingResults(generation, bestIndividual.GetFitness(), bestIndividual.nn.GetRoundedDNAString());
@@ -258,7 +276,7 @@ public class GeneticAlgorithm : MonoBehaviour {
         for (int i = 0; i < populationSize; i++)
         {
             //Physische Instanziierung des Individuums
-            GameObject physicalIndividual = Instantiate(runnerPrefab, startingPosition, Quaternion.identity);
+            GameObject physicalIndividual = Instantiate(runnerPrefab, spawn, Quaternion.identity);
          
             CharController charController = physicalIndividual.GetComponent<CharController>();
             //Übergeben des GenetischenAlgorithmuses

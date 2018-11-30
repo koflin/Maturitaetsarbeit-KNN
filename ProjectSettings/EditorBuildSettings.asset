@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 8f6aa5808c9427a4286c4e2cac78c372
   - enabled: 1
-    path: Assets/Scenes/Testing.unity
+    path: Assets/Scenes/Parcour Automatic.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Parcour Manual.unity
+    guid: dffd9d3345884aa43b2a7edefb4a5c47
+  - enabled: 1
+    path: Assets/Scenes/Course Selection.unity
+    guid: 166c3fd3aaab8fa4d99f9dad974acf01
+  - enabled: 1
+    path: Assets/Scenes/AI Selection.unity
+    guid: 38cf70799aaa7914f8a1647a31fd5b96
   m_configObjects: {}

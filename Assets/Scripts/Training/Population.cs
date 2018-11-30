@@ -6,6 +6,17 @@ public class Population {
 
     public List<Individual> individuals;
 
+    public List<NeuralNetwork> GetNNs()
+    {
+        List<NeuralNetwork> nns = new List<NeuralNetwork>();
+        foreach (Individual individual in individuals)
+        {
+            nns.Add(individual.nn);
+        }
+
+        return nns;
+    }
+
     public Population()
     {
         individuals = new List<Individual>();

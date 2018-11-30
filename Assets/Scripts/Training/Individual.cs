@@ -10,6 +10,11 @@ public class Individual {
     public double fitness = 0;
     public NeuralNetwork nn;
 
+    public Individual()
+    {
+
+    }
+
     public Individual(NeuralNetwork nn, GameObject gameObject)
     {
         this.nn = nn;

@@ -35,7 +35,13 @@ public class NeuralNetwork {
 
         return JsonMapper.ToJson(roundedDNA);
     }
-    
+
+    //Konstruktor für die Desirialisierung
+    public NeuralNetwork()
+    {
+
+    }
+
     //Konstruktor des NN mit vorgegebner DNA
     public NeuralNetwork(List<int> neuronAmounts, List<double> dna)
     {

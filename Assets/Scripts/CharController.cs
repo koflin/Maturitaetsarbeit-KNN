@@ -87,10 +87,13 @@ public class CharController : MonoBehaviour {
     //Bewegung
     public void Move(float horizontalInput)
     {
-        if (charController != null)
+        if (!crashed)
         {
-            transform.Rotate(0, 0, -1 * horizontalInput * turnSpeed);
-            charController.Move(transform.TransformDirection(new Vector3(0, forwardSpeed, 0)));
+            if (charController != null)
+            {
+                transform.Rotate(0, 0, -1 * horizontalInput * turnSpeed);
+                charController.Move(transform.TransformDirection(new Vector3(0, forwardSpeed, 0)));
+            }
         }
     }
 
