@@ -17,31 +17,6 @@ public class CourseMenuManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        /*storagePath = Application.dataPath + "/Resources/Courses";
-
-        string[] files = Directory.GetFiles(storagePath);
-
-        items = new List<GameObject>();
-
-        int i = 0;
-        foreach (string file in files)
-        {
-            if (Path.GetExtension(file) == ".meta")
-            {
-                continue;
-            }
-
-            GameObject item = Instantiate(courseItemPrefab, itemContainer.transform);
-
-            item.transform.GetChild(0).GetComponent<Text>().text = Path.GetFileNameWithoutExtension(file);
-
-            //Es muss eine Kopie von i gemacht werden, da AddListener anscheinend asynchron verläuft
-            int copyI = i;
-            item.GetComponent<Button>().onClick.AddListener(() => ChooseCourse(copyI));
-
-            items.Add(item);
-            i++;
-        }*/
 
         GameObject[] courses = Resources.LoadAll<GameObject>("Courses");
 
@@ -70,6 +45,7 @@ public class CourseMenuManager : MonoBehaviour {
 
     public void ChooseCourse(int indexClicked)
     {
+        chosenIndex = indexClicked;
         items[indexClicked].GetComponent<Button>().Select();
     }
 
@@ -84,8 +60,8 @@ public class CourseMenuManager : MonoBehaviour {
 
         else
         {
-            //SceneManager.LoadScene((int)SceneNumber.MENU_AI_SELECTION);
-            SceneManager.LoadScene((int)SceneNumber.PARCOUR_AUTO);
+            SceneManager.LoadScene((int)SceneNumber.MENU_AI_SELECTION);
+            //SceneManager.LoadScene((int)SceneNumber.PARCOUR_AUTO);
         }
     }
 

@@ -22,6 +22,9 @@ public class AIMenuManager : MonoBehaviour {
         items = new GameObject[ais.Count + 1];
         for (int i = 0; i < ais.Count + 1; i++)
         {
+            //Es muss eine Kopie von i gemacht werden, da AddListener anscheinend asynchron verläuft
+            int copyI = i;
+
             GameObject item;
         
             if (i == 0)
@@ -34,10 +37,12 @@ public class AIMenuManager : MonoBehaviour {
             else
             {
                 item = Instantiate(aiPrefab, itemContainer.transform);
+
+                item.transform.GetChild(0).GetComponent<Text>().text = ais[i - 1].name;
+
+                item.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(() => DeleteAI(copyI));
             }
 
-            //Es muss eine Kopie von i gemacht werden, da AddListener anscheinend asynchron verläuft
-            int copyI = i;
             item.GetComponent<Button>().onClick.AddListener(() => ChooseAI(copyI));
 
             items[i] = item;
@@ -61,6 +66,14 @@ public class AIMenuManager : MonoBehaviour {
     public void ChooseName(string name)
     {
         newName = name;
+    }
+
+    public void DeleteAI(int indexClicked)
+    {
+        chosenIndex = indexClicked;
+        ais[indexClicked - 1].Delete();
+
+        Destroy(items[indexClicked]);
     }
 
     public void Next()

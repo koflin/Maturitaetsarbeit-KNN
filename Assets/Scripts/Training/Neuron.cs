@@ -4,10 +4,6 @@ using UnityEngine;
 
 public abstract class Neuron {
 
-    /*
-     * Currently out of use
-     */
-
     public List<double> weights;
     public double bias;
 
@@ -38,6 +34,6 @@ public abstract class Neuron {
         return ApplyActivasion(netInput);
     }
 
-    //Berechnung der Aktivierung
+    //Berechnung der Aktivierung (ist je nach Typ Neuron unterschiedlich)
     public abstract double ApplyActivasion(double netInput);
 }

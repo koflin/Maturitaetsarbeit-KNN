@@ -1,5 +1,4 @@
-﻿using LitJson;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -19,7 +18,7 @@ public class GeneticAlgorithm : MonoBehaviour {
     public Tilemap path;
     public GameObject runnerPrefab;
     public bool running = false;
-    public UITraining ui;
+    public TrainingUI ui;
     public AI ai;
     public string courseId;
 
@@ -31,7 +30,7 @@ public class GeneticAlgorithm : MonoBehaviour {
     //Wird am Anfag der Szene aufgerufen
     public void Start()
     {
-        ui = GetComponent<UITraining>();
+        ui = GetComponent<TrainingUI>();
     }
 
     //Wird in einem bestimmten Interval aufgerufen
@@ -70,28 +69,46 @@ public class GeneticAlgorithm : MonoBehaviour {
     //WIrd aufgerufen sobald die Runde starten soll
     public void OnStart(AI ai)
     {
-        trainingSession = new TrainingSession(courseId);
+        this.ai = ai;
+        this.trainingSession = new TrainingSession(courseId);
 
-        GenerateRandomPopulation();
+        if (ai.trainingSessions.Count == 0)
+        {
+            Debug.Log("GENERATE RANDOM");
+            GenerateRandomPopulation();
+        }
+
+        else
+        {
+            Debug.Log("GENERATE FROM POP");
+            GeneratePopulation(ai.GetNNs());
+        }
 
         running = true;
     }
 
-    //Wird aufgerufen wenn ein Individuum in die Lava fällt
-    public void OnIndividualCrash(GameObject physicalIndividual)
+    //Wird aufgerufen wenn ein Individuum gestoppt wird
+    public void OnIndividualStopped(GameObject physicalIndividual)
     {
         //Herholen des virtuellen Individuums anhand der physischen Instanz
-        Individual individual = population.GetIndividualByGameObject(physicalIndividual);
+        Individual thisIndividual = population.GetIndividualByGameObject(physicalIndividual);
 
         //Setzte das Individuum auf zerstört
-        individual.hasCrahsed = true;
-        //Runde die Fitness des Individuums
-        individual.RoundFitness();
+        thisIndividual.hasStopped = true;
 
         //Prüfen ob alle Individuen verunfallt sind
-        if (population.HaveAllCrashed())
+        if (population.HaveAllStopped())
         {
+            foreach (Individual individual in population.individuals)
+            {
+                //Runde die Fitness des Individuums
+                individual.RoundFitness();
+            }
+
             running = false;
+
+            //Speichern der Population
+            trainingSession.AddGeneration(population);
 
             if (maxGenerations > generation)
             {
@@ -110,28 +127,18 @@ public class GeneticAlgorithm : MonoBehaviour {
             }
         }
 
-        Debug.Log("Individual " + physicalIndividual.GetInstanceID() + " has finished with fitness " + individual.fitness);
+        Debug.Log("Individual " + physicalIndividual.GetInstanceID() + " has finished with fitness " + thisIndividual.fitness);
     }
 
-    //Wird aufgerufen wenn ein Individuum das Ziel erreicht hat
-    public void OnIndividualEndReached(GameObject physicalIndividual)
+    //Wird aufgerufen wenn ein Individuum feststeckt
+    public void OnIndividualStuck()
     {
-        running = false;
-
-        if (maxGenerations > generation)
+        foreach (Individual individual in population.individuals)
         {
-            //Weiterentwickeln der Population
-            Evolve();
-
-            Debug.Log("Evolving...");
-        }
-
-        //Wenn die maximale Generationenanzahl erreicht wurde (Ende)
-        else
-        {
-            Finish();
-
-            Debug.Log("Finished...");
+            if (!individual.hasStopped)
+            {
+                OnIndividualStopped(individual.GetGameObject());
+            }
         }
     }
     #endregion
@@ -139,9 +146,6 @@ public class GeneticAlgorithm : MonoBehaviour {
     //Evolvieren der Population
     public void Evolve()
     {
-        //Speichern der Population
-        trainingSession.AddGeneration(population);
-
         //Löschen der alten Population
         DespawnPopulation();
 
@@ -223,8 +227,8 @@ public class GeneticAlgorithm : MonoBehaviour {
     public void Finish()
     {
         //Speichern der Session
-        //ai.AddSession(trainingSession);
-        //ai.Store();
+        ai.AddSession(trainingSession);
+        ai.Store();
 
         //Löschen der alten Population
         DespawnPopulation();

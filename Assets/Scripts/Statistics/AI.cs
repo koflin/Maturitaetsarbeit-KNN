@@ -1,24 +1,21 @@
-﻿using LitJson;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+[Serializable]
 public class AI  {
-
-    public static string storagePath = Application.streamingAssetsPath + "/AIs";
 
     public string id;
     public string name;
-    public DateTime created;
+    public Time created;
 
     public List<TrainingSession> trainingSessions;
 
     //Konstruktor für die Desirialisierung
     public AI()
     {
-
     }
 
     //Neu instanziierung
@@ -37,6 +34,20 @@ public class AI  {
         this.trainingSessions = new List<TrainingSession>();
     }
 
+    public List<NeuralNetwork> GetNNs()
+    {
+        TrainingSession latestTrainingSession = trainingSessions[trainingSessions.Count - 1];
+        GenerationStorable latestPopulation = latestTrainingSession.generations[latestTrainingSession.generations.Count - 1];
+        List<NeuralNetwork> nns = new List<NeuralNetwork>();
+
+        foreach (IndividualStorable individual in latestPopulation.individuals)
+        {
+            nns.Add(new NeuralNetwork(individual.neuronAmounts, individual.dna));
+        }
+
+        return nns;
+    }
+
     //Zurückgeben der besten TrainingsSession auf dem ausgewählten course
     public TrainingSession GetBestSessionByCourse(string courseId)
     {
@@ -53,11 +64,11 @@ public class AI  {
         if (sessionsOnCourse.Count != 0)
         {
             TrainingSession bestTrainingSession = sessionsOnCourse[0];
-            int bestFitness = sessionsOnCourse[0].GetLastGeneration().GetBestIndividual().GetFitness();
+            int bestFitness = sessionsOnCourse[0].GetLastGeneration().GetBestIndividualFitness();
 
             for (int i = 1; i < sessionsOnCourse.Count; i++)
             {
-                int fitness = sessionsOnCourse[i].GetLastGeneration().GetBestIndividual().GetFitness();
+                int fitness = sessionsOnCourse[i].GetLastGeneration().GetBestIndividualFitness();
                 if (fitness > bestFitness)
                 {
                     bestTrainingSession = sessionsOnCourse[i];
@@ -83,35 +94,51 @@ public class AI  {
         return trainingSessions[trainingSessions.Count - 1];
     }
 
-    //Speichern der AI im Speicher
+    //Speichern der KI im Speicher
     public void Store()
     {
-        string jsonObject = JsonMapper.ToJson(this);
+        string jsonObject = JsonUtility.ToJson(this);
         StreamWriter writer;
 
-        writer = new StreamWriter(storagePath + "/" + id + ".txt");
+        writer = new StreamWriter(Application.streamingAssetsPath + "/AIs/" + id + ".json");
 
         writer.Write(jsonObject);
         writer.Close();
+    }
+
+    //Löschen der KI im Speicher
+    public void Delete()
+    {
+        if (File.Exists(Application.streamingAssetsPath + "/AIs/" + id + ".json"))
+        {
+            File.Delete(Application.streamingAssetsPath + "/AIs/" + id + ".json");
+            File.Delete(Application.streamingAssetsPath + "/AIs/" + id + ".json.meta");
+            return;
+        }
+
+        throw new NullReferenceException("AI could not be deleted because it was not found");
     }
 
     //Instanziierung aller AIs vom Speicher
     public static List<AI> GetAll()
     {
         List<AI> aiList = new List<AI>();
-        string[] files = Directory.GetFiles(storagePath);
+        string[] files = Directory.GetFiles(Application.streamingAssetsPath + "/AIs");
 
         foreach (string fileName in files)
         {
-            StreamReader reader = new StreamReader(fileName);
-            string fileText = reader.ReadToEnd();
-            reader.Close();
-
-            AI ai = JsonMapper.ToObject<AI>(fileText);
-
-            if (ai != null)
+            if (Path.GetExtension(Application.streamingAssetsPath + "/AIs" + fileName) == ".json")
             {
-                aiList.Add(ai);
+                StreamReader reader = new StreamReader(fileName);
+                string fileText = reader.ReadToEnd();
+                reader.Close();
+
+                AI ai = JsonUtility.FromJson<AI>(fileText);
+
+                if (ai != null)
+                {
+                    aiList.Add(ai);
+                }
             }
         }
 

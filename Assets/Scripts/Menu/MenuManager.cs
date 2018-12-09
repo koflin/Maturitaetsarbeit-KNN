@@ -12,7 +12,8 @@ public class MenuManager : MonoBehaviour
         PARCOUR_AUTO = 1,
         PARCOUR_MANUAL = 2,
         MENU_COURSE_SELECTION = 3,
-        MENU_AI_SELECTION = 4
+        MENU_AI_SELECTION = 4,
+        MENU_STATISTICS = 5
     }
 
     // Use this for initialization
@@ -26,11 +27,6 @@ public class MenuManager : MonoBehaviour
 
     }
 
-    public void Exit()
-    {
-        Application.Quit();
-    }
-
     public void Manual()
     {
         manual = true;
@@ -41,5 +37,15 @@ public class MenuManager : MonoBehaviour
     {
         manual = false;
         SceneManager.LoadScene((int)SceneNumber.MENU_COURSE_SELECTION);
+    }
+
+    public void Statistics()
+    {
+        SceneManager.LoadScene((int)SceneNumber.MENU_STATISTICS);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

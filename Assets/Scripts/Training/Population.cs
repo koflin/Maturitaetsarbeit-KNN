@@ -41,11 +41,11 @@ public class Population {
     }
 
     //Prüfen ob alle Individuen zerstört wurden
-    public bool HaveAllCrashed()
+    public bool HaveAllStopped()
     {
         foreach (Individual individual in individuals)
         {
-            if (!individual.hasCrahsed)
+            if (!individual.hasStopped)
             {
                 return false;
             }

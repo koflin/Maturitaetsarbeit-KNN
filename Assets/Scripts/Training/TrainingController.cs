@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class TrainingController : MonoBehaviour {
 
@@ -22,6 +23,7 @@ public class TrainingController : MonoBehaviour {
             GeneticAlgorithm ga = GetComponent<GeneticAlgorithm>();
 
             ga.OnCourseLoaded(courseId, course);
+            Debug.Log("ON START");
             ga.OnStart(ai);
         }
     }

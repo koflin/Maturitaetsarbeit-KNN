@@ -1014,6 +1014,7 @@ MonoBehaviour:
   aiPrefab: {fileID: 1571374140417210, guid: 0905aba07f7767b41a99781d5458b148, type: 2}
   itemContainer: {fileID: 1826584398}
   items: []
+  ais: []
   chosenIndex: 0
 --- !u!4 &1129530335
 Transform:
@@ -1330,7 +1331,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000009867653, y: 410.75546}
+  m_AnchoredPosition: {x: 0.000009867653, y: 410.65}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1826584400

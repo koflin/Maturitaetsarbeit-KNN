@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static MenuManager;
 
-public class UITraining : MonoBehaviour {
+public class TrainingUI : MonoBehaviour {
 
     [Header("Training")]
     public GameObject statUI;

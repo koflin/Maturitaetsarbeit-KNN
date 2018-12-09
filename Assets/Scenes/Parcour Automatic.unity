@@ -741,7 +741,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1506883885}
-        m_MethodName: Evolve
+        m_MethodName: OnIndividualStuck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -896,7 +896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 442.7, y: -286.15}
+  m_AnchoredPosition: {x: 442.7, y: -286.15002}
   m_SizeDelta: {x: -920, y: -600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1451510560
@@ -1127,8 +1127,19 @@ MonoBehaviour:
     type: 2}
   running: 0
   ui: {fileID: 0}
+  ai:
+    id: 
+    name: 
+    created:
+      value: 0
+    trainingSessions: []
   courseId: 
   generation: 1
+  trainingSession:
+    courseId: 
+    created:
+      value: 0
+    generations: []
 --- !u!114 &1506883886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,8 +1244,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506883887}
-        m_MethodName: Back
+      - m_Target: {fileID: 1506883886}
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

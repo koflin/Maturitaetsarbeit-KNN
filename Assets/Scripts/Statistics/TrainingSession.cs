@@ -5,17 +5,18 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+[Serializable]
 public class TrainingSession {
 
     public string courseId;
-    public DateTime created;
+    public Time created;
 
-    public List<Population> generations;
+    public List<GenerationStorable> generations;
 
     //Konstruktor für die Desirialisierung
     public TrainingSession()
     {
-
+        
     }
 
     //Erstmalige Instanziierung
@@ -24,17 +25,17 @@ public class TrainingSession {
         this.courseId = courseId;
         this.created = DateTime.Now;
 
-        this.generations = new List<Population>();
+        this.generations = new List<GenerationStorable>();
     }
 
     //Hinzufügen einer Generation
     public void AddGeneration(Population generation)
     {
-        generations.Add(generation);
+        generations.Add(new GenerationStorable(generation));
     }
 
     //Gibt die letzte Generation zurück
-    public Population GetLastGeneration()
+    public GenerationStorable GetLastGeneration()
     {
         if (generations.Count > 0)
         {

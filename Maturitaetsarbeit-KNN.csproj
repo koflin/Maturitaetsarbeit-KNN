@@ -320,8 +320,15 @@
     <Compile Include="Assets\Scripts\Menu\AIMenuManager.cs" />
     <Compile Include="Assets\Scripts\Menu\CourseMenuManager.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\Menu\StatisticMenuManager.cs" />
     <Compile Include="Assets\Scripts\Statistics\AI.cs" />
+    <Compile Include="Assets\Scripts\Statistics\GraphicManager.cs" />
+    <Compile Include="Assets\Scripts\Statistics\Point.cs" />
+    <Compile Include="Assets\Scripts\Statistics\StatisticManager.cs" />
     <Compile Include="Assets\Scripts\Statistics\TrainingSession.cs" />
+    <Compile Include="Assets\Scripts\Storing\IndividualStorable.cs" />
+    <Compile Include="Assets\Scripts\Storing\GenerationStorable.cs" />
+    <Compile Include="Assets\Scripts\Storing\Time.cs" />
     <Compile Include="Assets\Scripts\Training\Chromosome.cs" />
     <Compile Include="Assets\Scripts\Training\Distances.cs" />
     <Compile Include="Assets\Scripts\Training\GeneticAlgorithm.cs" />
@@ -333,7 +340,7 @@
     <Compile Include="Assets\Scripts\Training\OutputNeuron.cs" />
     <Compile Include="Assets\Scripts\Training\Population.cs" />
     <Compile Include="Assets\Scripts\Training\TrainingController.cs" />
-    <Compile Include="Assets\Scripts\Training\UITraining.cs" />
+    <Compile Include="Assets\Scripts\Training\TrainingUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />

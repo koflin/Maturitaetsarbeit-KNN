@@ -21,6 +21,7 @@ public class CharController : MonoBehaviour {
     [Header("Raycast")]
     public float raycastMaxDistance = 100f;
 
+    public bool finished = false;
     public bool crashed = false;
 
     //Urückgeben ob der Charakter einen Unfall hatte
@@ -38,27 +39,17 @@ public class CharController : MonoBehaviour {
 	
 	void Update ()
     {
-        if (!crashed)
+        if (!crashed && !finished)
         {
             //tilemap.SetTile(new Vector3Int((int)Mathf.Floor(transform.position.x), (int)Mathf.Floor(transform.position.y), 0), debugTile);
             TileBase tileBase = tilemap.GetTile(new Vector3Int((int)Mathf.Floor(transform.position.x), (int)Mathf.Floor(transform.position.y), 0));
 
 
-            if (tileBase == null || tileBase.name != "Grey Stones")
+            if (tileBase == null)
             {
                 if (!manual)
                 {
-                    geneticAlgorithm.OnIndividualCrash(gameObject);
-                }
-
-                crashed = true;
-            }
-
-            else if (tileBase.name == "Finish")
-            {
-                if (!manual)
-                {
-                    geneticAlgorithm.OnIndividualEndReached(gameObject);
+                    geneticAlgorithm.OnIndividualStopped(gameObject);
                 }
 
                 crashed = true;
@@ -68,7 +59,7 @@ public class CharController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (!crashed)
+        if (!crashed && !finished)
         {
             //Prüft ob die Steuerung manuell ist
             if (manual)
@@ -87,7 +78,7 @@ public class CharController : MonoBehaviour {
     //Bewegung
     public void Move(float horizontalInput)
     {
-        if (!crashed)
+        if (!crashed && !finished)
         {
             if (charController != null)
             {
