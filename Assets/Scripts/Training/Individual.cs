@@ -8,7 +8,7 @@ public class Individual {
     public bool hasStopped;
     public bool hasFinished;
  
-    public double fitness = 0;
+    public double fitness = 1;
     public NeuralNetwork nn;
 
     public Individual()

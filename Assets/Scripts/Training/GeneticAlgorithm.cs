@@ -137,6 +137,7 @@ public class GeneticAlgorithm : MonoBehaviour {
         {
             if (!individual.hasStopped)
             {
+                individual.fitness = 1;
                 OnIndividualStopped(individual.GetGameObject());
             }
         }
