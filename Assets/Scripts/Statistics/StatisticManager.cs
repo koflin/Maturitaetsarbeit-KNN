@@ -33,6 +33,15 @@ public class StatisticManager : MonoBehaviour {
                     stats.Add(i + 1, trainingSession.generations[i].GetBestIndividualFitness());
                 }
                 break;
+
+            case 2:
+                for (int i = 0; i < trainingSession.generations.Count; i++)
+                {
+                    xLabel = "Generation";
+                    yLabel = "Successrate (% of Population)";
+                    stats.Add(i + 1, trainingSession.generations[i].GetSuccesRate() * 100);
+                }
+                break;
         }
 
         graphic.GetComponent<GraphicManager>().ShowData(xLabel, yLabel, stats);

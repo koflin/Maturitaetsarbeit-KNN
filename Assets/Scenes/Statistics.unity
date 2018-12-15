@@ -235,7 +235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 72.2, y: 26.97}
+  m_AnchoredPosition: {x: 72.2, y: 77.2}
   m_SizeDelta: {x: 1600, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &66817679
@@ -323,6 +323,7 @@ MonoBehaviour:
   points: []
   xLabel: 
   yLabel: 
+  currentPoint: 0
 --- !u!114 &66817683
 MonoBehaviour:
   m_ObjectHideFlags: 0

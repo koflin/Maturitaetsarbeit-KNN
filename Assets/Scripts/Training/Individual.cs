@@ -5,8 +5,8 @@ using UnityEngine;
 public class Individual {
 
     private GameObject gameObject;
-    public bool hasStopped;
-    public bool hasFinished;
+    public bool hasStopped = false;
+    public bool hasFinished = false;
  
     public double fitness = 1;
     public NeuralNetwork nn;

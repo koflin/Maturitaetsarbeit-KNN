@@ -60,4 +60,19 @@ public class GenerationStorable {
 
         return Mathf.RoundToInt(totalIndividualFitness);
     }
+
+    internal double GetSuccesRate()
+    {
+        int finished = 0;
+
+        foreach (IndividualStorable individual in individuals)
+        {
+            if (individual.finished)
+            {
+                finished += 1;
+            }
+        }
+
+        return finished / (double)individuals.Count;
+    }
 }

@@ -30,7 +30,7 @@ public class StatisticMenuManager : MonoBehaviour {
 
         aiSelection.GetComponent<Dropdown>().AddOptions(aiOptions);
 
-        criteriaSelection.GetComponent<Dropdown>().AddOptions(new List<Dropdown.OptionData>() { new Dropdown.OptionData("Average Fitness"), new Dropdown.OptionData("Best Fitness") });
+        criteriaSelection.GetComponent<Dropdown>().AddOptions(new List<Dropdown.OptionData>() { new Dropdown.OptionData("Average Fitness"), new Dropdown.OptionData("Best Fitness"), new Dropdown.OptionData("Successrate") });
 
         RefreshSessionOption(0);
     }

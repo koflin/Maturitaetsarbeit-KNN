@@ -35,7 +35,6 @@ public class GraphicManager : MonoBehaviour {
 
     public void Start()
     {
-        //ShowData(new Dictionary<double, double>() { { 0, 0 }, { 5, 10 }, { 4, 4 }, { 1, 0} });
     }
 
     public void ShowData(string xLabel, string yLabel, IDictionary<double, double> data)
@@ -91,16 +90,13 @@ public class GraphicManager : MonoBehaviour {
         xMarks = new List<GameObject>();
         yMarks = new List<GameObject>();
 
-        xScale = (double)xAxis.GetComponent<RectTransform>().rect.width / (Mathf.CeilToInt((float)maxX) + 1);
-        yScale = (double)yAxis.GetComponent<RectTransform>().rect.height / (Mathf.CeilToInt((float)maxY) + 1);
+        xScale = xAxis.GetComponent<RectTransform>().rect.width / (Mathf.CeilToInt((float)maxX) + 1d);
+        yScale = yAxis.GetComponent<RectTransform>().rect.height / ((Mathf.CeilToInt((float)maxY) / 10d) + 1d);
 
         int xSteps = 1;
         while (xScale < (double)xAxis.GetComponent<RectTransform>().rect.width / 23)
         {
-            if (xSteps > 1)
-            {
-                xScale /= xSteps;
-            }
+            xScale /= xSteps;
 
             xSteps += 1;
 
@@ -109,15 +105,12 @@ public class GraphicManager : MonoBehaviour {
 
         this.xSteps = xSteps;
 
-        int ySteps = 50;
+        int ySteps = 10;
         while (yScale < (double)yAxis.GetComponent<RectTransform>().rect.height / 11)
         {
-            if (ySteps > 50)
-            {
-                yScale /= ySteps;
-            }
+            yScale /= ySteps;
 
-            ySteps += 50;
+            ySteps += 10;
 
             yScale *= ySteps;
         }
@@ -146,8 +139,10 @@ public class GraphicManager : MonoBehaviour {
             GameObject pointObject = Instantiate(pointPrefab, transform);
 
             RectTransform pointRect = pointObject.GetComponent<RectTransform>();
-            pointRect.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, (float)(xScale / xSteps * point.Key - pointRect.rect.width / 2), 10);
-            pointRect.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, (float)(yScale / ySteps * point.Value - pointRect.rect.height / 2), 10);
+            pointRect.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, (float)(xScale / xSteps * point.Key - pointRect.rect.width / 2),pointRect.rect.width);
+            pointRect.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, (float)(yScale / ySteps * point.Value - pointRect.rect.height / 2), pointRect.rect.height);
+
+            Debug.Log("Scale: " + yScale + " Steps: " + ySteps);
 
             int indexCopy = index;
             pointObject.GetComponent<Button>().onClick.AddListener(() => PointClicked(indexCopy));

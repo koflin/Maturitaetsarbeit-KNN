@@ -49,10 +49,20 @@ public class CharController : MonoBehaviour {
             {
                 if (!manual)
                 {
-                    geneticAlgorithm.OnIndividualStopped(gameObject);
+                    geneticAlgorithm.OnIndividualStopped(gameObject, false);
                 }
 
                 crashed = true;
+            }
+
+            else if (tileBase.name == "Finish")
+            {
+                if (!manual)
+                {
+                    geneticAlgorithm.OnIndividualStopped(gameObject, true);
+                }
+
+                finished = true;
             }
         }
     }

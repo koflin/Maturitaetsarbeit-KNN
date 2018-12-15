@@ -10,8 +10,14 @@ public class TrainingUI : MonoBehaviour {
     public Text statGeneration;
     public Text statBestFitness;
     public Text statDNA;
+    public Text generation;
     public GameObject buttonStuck;
     public GameObject buttonQuit;
+
+    public void UpdateGeneration(int generation)
+    {
+        this.generation.text = generation.ToString();
+    }
 
     public void SetTrainingResults(int generations, int bestFitness, string stringDNA)
     {

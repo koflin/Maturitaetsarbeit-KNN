@@ -1,8 +1,7 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UI;
 
 public class GeneticAlgorithm : MonoBehaviour {
 
@@ -88,13 +87,18 @@ public class GeneticAlgorithm : MonoBehaviour {
     }
 
     //Wird aufgerufen wenn ein Individuum gestoppt wird
-    public void OnIndividualStopped(GameObject physicalIndividual)
+    public void OnIndividualStopped(GameObject physicalIndividual, bool finished)
     {
         //Herholen des virtuellen Individuums anhand der physischen Instanz
         Individual thisIndividual = population.GetIndividualByGameObject(physicalIndividual);
 
         //Setzte das Individuum auf zerstört
         thisIndividual.hasStopped = true;
+
+        if (finished)
+        {
+            thisIndividual.hasFinished = true;
+        }
 
         //Prüfen ob alle Individuen verunfallt sind
         if (population.HaveAllStopped())
@@ -138,7 +142,7 @@ public class GeneticAlgorithm : MonoBehaviour {
             if (!individual.hasStopped)
             {
                 individual.fitness = 1;
-                OnIndividualStopped(individual.GetGameObject());
+                OnIndividualStopped(individual.GetGameObject(), false);
             }
         }
     }
@@ -173,7 +177,7 @@ public class GeneticAlgorithm : MonoBehaviour {
             }
 
             //Zufälliger Crossover Punkt (Punkt 0 wäre nach dem ersten Gen)
-            int crossoverPoint = Random.Range(0, dnaOne.Count - 1);
+            int crossoverPoint = UnityEngine.Random.Range(0, dnaOne.Count - 1);
 
             //Inizialisiere leere neue DNA Stücke
             List<double> newDnaOne = new List<double>();
@@ -194,21 +198,21 @@ public class GeneticAlgorithm : MonoBehaviour {
             for (int genIndex = 0; genIndex < newDnaOne.Count; genIndex++)
             {
                 //Zufällige werte von 1 bis und mit 1000
-                int randomOne = Random.Range(1, 1001);
-                int randomTwo = Random.Range(1, 1001);
+                int randomOne = UnityEngine.Random.Range(1, 1001);
+                int randomTwo = UnityEngine.Random.Range(1, 1001);
 
                 //Mutiert wenn der zufällige Wert im Mutationsbereich liegt
                 if (randomOne <= mutationRate)
                 {
                     //Generiere eine float Zahl die von -5 bis und mit 5 geht
-                    newDnaOne[genIndex] = Random.Range(-5f, 5f);
+                    newDnaOne[genIndex] = UnityEngine.Random.Range(-5f, 5f);
                 }
 
                 //Mutiert wenn der zufällige Wert im Mutationsbereich liegt
                 if (randomTwo <= mutationRate)
                 {
                     //Generiere eine float Zahl die von -5 bis und mit 5 geht
-                    newDnaTwo[genIndex] = Random.Range(-5f, 5f);
+                    newDnaTwo[genIndex] = UnityEngine.Random.Range(-5f, 5f);
                 }
             }
 
@@ -222,6 +226,7 @@ public class GeneticAlgorithm : MonoBehaviour {
 
         running = true;
         generation += 1;
+        ui.UpdateGeneration(generation);
     }
 
     //Beenden des Trainings
