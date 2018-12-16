@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-D:/Programme Workspace/GitHub/Maturitaetsarbeit-KNN/Builds/Windows/Parcour Runner.exe
+D:/Programme Workspace/GitHub/Maturitaetsarbeit-KNN/Builds/Windows Version 2/Parcour Runner.exe
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Parcour Automatic.unity
@@ -176,7 +176,7 @@ aac9c55ae7ba4b95b852a7d9c191acd1 Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
-416ce477fe7f7711fb4204ff43b1935c Assembly-CSharp.dll:.GeneticAlgorithm
+c7ccbe47e0b2663bbb0c0aa4164a74d0 Assembly-CSharp.dll:.GeneticAlgorithm
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 95462e0430f9dbf0d1cdc76fe10af440 Assembly-CSharp.dll:.GraphicManager
 37371a8d8d98ae14397ad05fb7b803a3 Assembly-CSharp.dll:.StatisticMenuManager

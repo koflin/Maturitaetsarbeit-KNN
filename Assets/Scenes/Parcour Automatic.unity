@@ -1206,7 +1206,7 @@ MonoBehaviour:
   populationSize: 20
   neuronAmounts: 050000000400000001000000
   dilation: 1
-  mutationRate: 10
+  mutationRate: 20
   maxGenerations: 20
   spawn: {x: 0, y: 0}
   path: {fileID: 0}

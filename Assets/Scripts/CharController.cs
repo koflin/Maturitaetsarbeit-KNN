@@ -30,6 +30,11 @@ public class CharController : MonoBehaviour {
         return crashed;
     }
 
+    public bool HasFinished()
+    {
+        return finished;
+    }
+
 	void Start () {
         charController = GetComponent<CharacterController>();
         charController.detectCollisions = false;

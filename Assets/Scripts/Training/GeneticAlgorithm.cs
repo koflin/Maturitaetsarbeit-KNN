@@ -9,8 +9,9 @@ public class GeneticAlgorithm : MonoBehaviour {
     public int populationSize = 20;
     public List<int> neuronAmounts = new List<int> { 5, 4, 1};
     public double dilation = 1;
-    public int mutationRate = 10; //Geht von 0 bis 1000 (Promille)
+    public int mutationRate = 20; //Geht von 0 bis 1000 (Promille)
     public int maxGenerations = 10;
+    public double successMultiplier = 1.5;
 
     [Header("Unity Settings")]
     public Vector2 spawn;
@@ -47,7 +48,16 @@ public class GeneticAlgorithm : MonoBehaviour {
                 if (!cc.IsCrashed())
                 {
                     cc.Move((float)nn.ComputeOutput(distances));
-                    individual.fitness += ComputeFitness(cc.CalculateDistances());
+
+                    if (cc.HasFinished())
+                    {
+                        individual.fitness += ComputeFitness(cc.CalculateDistances()) * successMultiplier;
+                    }
+
+                    else
+                    {
+                        individual.fitness += ComputeFitness(cc.CalculateDistances());
+                    }
                 }
 
                 counter += 1;
@@ -220,9 +230,23 @@ public class GeneticAlgorithm : MonoBehaviour {
             offSpring.Add(new NeuralNetwork(neuronAmounts, newDnaTwo));
         }
 
-        //Ersetzen (Nachwuchs ersetzt alte Population)
+        //Ersetzen (Neue Population besteht aus Nachwuchs und vorheriger Generation)
 
-        GeneratePopulation(offSpring);
+        List<NeuralNetwork> pool = new List<NeuralNetwork>();
+        pool.AddRange(population.GetNNs());
+        pool.AddRange(offSpring);
+
+        List<NeuralNetwork> newGeneration = new List<NeuralNetwork>();
+
+        for(int i = 0; i < population.GetNNs().Count; i++)
+        {
+            int index = UnityEngine.Random.Range(0, pool.Count);
+            newGeneration.Add(pool[index]);
+
+            pool.RemoveAt(index);
+        }
+
+        GeneratePopulation(newGeneration);
 
         running = true;
         generation += 1;
