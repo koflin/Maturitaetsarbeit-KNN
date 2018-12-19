@@ -233,21 +233,7 @@ public class GeneticAlgorithm : MonoBehaviour {
 
         //Ersetzen (Neue Population besteht aus Nachwuchs und vorheriger Generation)
 
-        List<NeuralNetwork> pool = new List<NeuralNetwork>();
-        pool.AddRange(population.GetNNs());
-        pool.AddRange(offSpring);
-
-        List<NeuralNetwork> newGeneration = new List<NeuralNetwork>();
-
-        for(int i = 0; i < population.GetNNs().Count; i++)
-        {
-            int index = UnityEngine.Random.Range(0, pool.Count);
-            newGeneration.Add(pool[index]);
-
-            pool.RemoveAt(index);
-        }
-
-        GeneratePopulation(newGeneration);
+        GeneratePopulation(offSpring);
 
         running = true;
         generation += 1;
