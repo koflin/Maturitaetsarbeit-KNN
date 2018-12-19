@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class GeneticAlgorithm : MonoBehaviour {
 
     [Header("NN Settings")]
+    public static bool testing = false;
     public int populationSize = 20;
     public List<int> neuronAmounts = new List<int> { 5, 4, 1};
     public double dilation = 1;
@@ -124,7 +125,7 @@ public class GeneticAlgorithm : MonoBehaviour {
             //Speichern der Population
             trainingSession.AddGeneration(population);
 
-            if (maxGenerations > generation)
+            if (maxGenerations > generation && !testing)
             {
                 //Weiterentwickeln der Population
                 Evolve();
@@ -132,7 +133,7 @@ public class GeneticAlgorithm : MonoBehaviour {
                 Debug.Log("Evolving...");
             }
 
-            //Wenn die maximale Generationenanzahl erreicht wurde (Ende)
+            //Wenn die maximale Generationenanzahl erreicht wurde (Ende) oder man sich im Test Modus befindet
             else
             {
                 Finish();

@@ -61,7 +61,7 @@ public class GenerationStorable {
         return Mathf.RoundToInt(totalIndividualFitness);
     }
 
-    internal double GetSuccesRate()
+    internal double GetSuccessRate()
     {
         int finished = 0;
 

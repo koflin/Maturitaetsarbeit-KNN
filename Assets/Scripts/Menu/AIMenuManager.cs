@@ -6,6 +6,7 @@ using static MenuManager;
 
 public class AIMenuManager : MonoBehaviour {
 
+    public GameObject toogleTesting;
     public GameObject aiNewPrefab;
     public string newName;
     public GameObject aiPrefab;
@@ -61,6 +62,16 @@ public class AIMenuManager : MonoBehaviour {
     {
         chosenIndex = indexClicked;
         items[indexClicked].GetComponent<Button>().Select();
+
+        if (indexClicked == 0)
+        {
+            toogleTesting.GetComponent<Toggle>().interactable = false;
+        }
+
+        else
+        {
+            toogleTesting.GetComponent<Toggle>().interactable = true;
+        }
     }
 
     public void ChooseName(string name)
@@ -81,11 +92,22 @@ public class AIMenuManager : MonoBehaviour {
         if (chosenIndex == 0)
         {
             TrainingController.ai = new AI(newName);
+            
         }
 
         else
         {
             TrainingController.ai = ais[chosenIndex - 1];
+
+            if (toogleTesting.GetComponent<Toggle>().isOn)
+            {
+                GeneticAlgorithm.testing = true;
+            }
+
+            else
+            {
+                GeneticAlgorithm.testing = true;
+            }
         }
 
 

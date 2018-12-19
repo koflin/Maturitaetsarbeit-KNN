@@ -1208,6 +1208,7 @@ MonoBehaviour:
   dilation: 1
   mutationRate: 20
   maxGenerations: 20
+  successMultiplier: 1.5
   spawn: {x: 0, y: 0}
   path: {fileID: 0}
   runnerPrefab: {fileID: 1793999018080082, guid: c0cecb15edcf0bf49ad41568ba5bde4a,

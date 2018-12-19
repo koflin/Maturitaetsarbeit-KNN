@@ -8,10 +8,12 @@ using static MenuManager;
 
 public class StatisticMenuManager : MonoBehaviour {
 
+    public GameObject modeSelection;
     public GameObject aiSelection;
     public GameObject sessionSelection;
     public GameObject criteriaSelection;
 
+    public bool onlyOneAI = true;
     public StatisticManager statisticManager;
 
     List<AI> ais;
@@ -28,6 +30,8 @@ public class StatisticMenuManager : MonoBehaviour {
             aiOptions.Add(new Dropdown.OptionData(ai.name));
         }
 
+        modeSelection.GetComponent<Dropdown>().AddOptions(new List<Dropdown.OptionData>() { new Dropdown.OptionData("One AI"), new Dropdown.OptionData("All AIs") });
+
         aiSelection.GetComponent<Dropdown>().AddOptions(aiOptions);
 
         criteriaSelection.GetComponent<Dropdown>().AddOptions(new List<Dropdown.OptionData>() { new Dropdown.OptionData("Average Fitness"), new Dropdown.OptionData("Best Fitness"), new Dropdown.OptionData("Successrate") });
@@ -37,11 +41,44 @@ public class StatisticMenuManager : MonoBehaviour {
 
     public void LoadStatistics()
     {
-        AI ai = ais[aiSelection.GetComponent<Dropdown>().value];
-        TrainingSession session = ai.trainingSessions[sessionSelection.GetComponent<Dropdown>().value];
-        int criteria = criteriaSelection.GetComponent<Dropdown>().value;
+        if (onlyOneAI)
+        {
+            AI ai = ais[aiSelection.GetComponent<Dropdown>().value];
+            TrainingSession session = ai.trainingSessions[sessionSelection.GetComponent<Dropdown>().value];
+            int criteria = criteriaSelection.GetComponent<Dropdown>().value;
 
-        statisticManager.LoadStatistic(ai, session, criteria);
+            statisticManager.LoadOneStatistic(session, criteria);
+        }
+
+        else
+        {
+            List<AI> ais = AI.GetAll();
+            List<TrainingSession> sessions = new List<TrainingSession>();
+
+            foreach (AI ai in ais)
+            {
+                sessions.Add(ai.GetLatestTrainingSession());
+            }
+
+            statisticManager.LoadAllStatistics(sessions, criteriaSelection.GetComponent<Dropdown>().value);
+        }
+    }
+
+    public void RefreshOptions(int newModeOption)
+    {
+        if (newModeOption == 0)
+        {
+            onlyOneAI = true;
+            aiSelection.SetActive(true);
+            sessionSelection.SetActive(true);
+        }
+
+        else
+        {
+            onlyOneAI = false;
+            aiSelection.SetActive(false);
+            sessionSelection.SetActive(false);
+        }
     }
 
     public void RefreshSessionOption(int newAIOption)
