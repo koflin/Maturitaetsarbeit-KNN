@@ -89,16 +89,9 @@ public class AI  {
     }
 
     //Gibt die letzte Trainings Session zurück
-    public TrainingSession GetLatestTrainingSession()
+    public TrainingSession GetLatestSession()
     {
-        for (int i = trainingSessions.Count - 1; i >= 0; i--)
-        {
-            if (trainingSessions[i].generations.Count > 1)
-            {
-                return trainingSessions[i];
-            }
-        }
-        return null;
+        return trainingSessions[trainingSessions.Count - 1];
     }
 
     //Speichern der KI im Speicher

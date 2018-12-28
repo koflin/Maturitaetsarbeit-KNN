@@ -106,7 +106,7 @@ public class AIMenuManager : MonoBehaviour {
 
             else
             {
-                GeneticAlgorithm.testing = true;
+                GeneticAlgorithm.testing = false;
             }
         }
 

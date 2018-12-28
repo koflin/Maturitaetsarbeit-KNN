@@ -57,7 +57,7 @@ public class StatisticMenuManager : MonoBehaviour {
 
             foreach (AI ai in ais)
             {
-                sessions.Add(ai.GetLatestTrainingSession());
+                sessions.Add(ai.GetLatestSession());
             }
 
             statisticManager.LoadAllStatistics(sessions, criteriaSelection.GetComponent<Dropdown>().value);

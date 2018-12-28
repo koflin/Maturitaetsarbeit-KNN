@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd13c8e5f175064598ae75b847613b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  populationSize: 20
+  populationSize: 1
   neuronAmounts: 050000000400000001000000
   dilation: 1
   mutationRate: 20

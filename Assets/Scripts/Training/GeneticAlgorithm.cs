@@ -108,7 +108,13 @@ public class GeneticAlgorithm : MonoBehaviour {
 
         if (finished)
         {
+            Debug.Log("Individual " + physicalIndividual.GetInstanceID() + " has finished");
             thisIndividual.hasFinished = true;
+        }
+
+        else
+        {
+            Debug.Log("Individual " + physicalIndividual.GetInstanceID() + " has crashed with fitness " + thisIndividual.fitness);
         }
 
         //Prüfen ob alle Individuen verunfallt sind
@@ -141,8 +147,6 @@ public class GeneticAlgorithm : MonoBehaviour {
                 Debug.Log("Finished...");
             }
         }
-
-        Debug.Log("Individual " + physicalIndividual.GetInstanceID() + " has finished with fitness " + thisIndividual.fitness);
     }
 
     //Wird aufgerufen wenn ein Individuum feststeckt

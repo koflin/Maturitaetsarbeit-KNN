@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-D:/OneDrive/Projekte/Maturarbeit/Optimiert/Builds/1/Parcour Runner.exe
+D:/OneDrive/Projekte/Maturarbeit/Parkour Anpassungsfähigkeit/Spezifisch/Test Resultate/Parcour Runner.exe
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Parcour Automatic.unity
