@@ -167,6 +167,7 @@ public class GeneticAlgorithm : MonoBehaviour {
 
         //Zurücksetzen der Kamera
 
+
         //Züchten
 
         //Selektion
@@ -195,7 +196,6 @@ public class GeneticAlgorithm : MonoBehaviour {
             List<double> newDnaTwo = new List<double>();
 
             //Setzte die neuen DNA Stücke aus den alten zusammen
-
             newDnaOne.AddRange(dnaOne.GetRange(0, crossoverPoint + 1));
             newDnaOne.AddRange(dnaTwo.GetRange(crossoverPoint + 1, dnaOne.Count - (crossoverPoint + 1)));
 
@@ -232,7 +232,6 @@ public class GeneticAlgorithm : MonoBehaviour {
         }
 
         //Ersetzen (Neue Population besteht aus Nachwuchs und vorheriger Generation)
-
         GeneratePopulation(offSpring);
 
         running = true;

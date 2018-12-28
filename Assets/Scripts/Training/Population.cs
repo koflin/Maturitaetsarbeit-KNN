@@ -60,7 +60,8 @@ public class Population {
         List<NeuralNetwork> parents = new List<NeuralNetwork>();
         int populationFitness = ComputePopulationFitness();
 
-        //Schleife welche Eltern auswählt, die Anzahl Eltern entspricht der Anzahl jetztigen Individuen
+        /*Schleife welche Eltern auswählt, die Anzahl Eltern entspricht der Anzahl
+        jetztigen Individuen*/
         for (int parentIndex = 0; parentIndex < individuals.Count; parentIndex++)
         {
             //Generiere eine zufällige Zahl von 1 bis zur Populationsfitness
@@ -74,7 +75,8 @@ public class Population {
                 //Addieren der jetztigen Numer mit der jetztigen Fitness
                 currentNumber += individual.GetFitness();
 
-                //Wenn die jetztige Nummer grösser oder gleich der zufälligen Nummer ist wird dieses Individuum als Elternteil ausgewählt
+                /*Wenn die jetztige Nummer grösser oder gleich der zufälligen Nummer
+                ist wird dieses Individuum als Elternteil ausgewählt*/
                 if (currentNumber >= randomNumber)
                 {
                     parents.Add(individual.nn);
