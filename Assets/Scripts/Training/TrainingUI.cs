@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static MenuManager;
 
+//Diese Klasse steuert das Trainings UI
 public class TrainingUI : MonoBehaviour {
 
     [Header("Training")]

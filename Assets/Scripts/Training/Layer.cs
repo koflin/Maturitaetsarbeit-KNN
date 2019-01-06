@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Diese Klasse stellt eine Schicht dar
 public class Layer {
 
     public List<Neuron> neurons;

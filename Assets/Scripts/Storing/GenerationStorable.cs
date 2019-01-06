@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Diese Klasse ist ein Speicherbehälter einer Generation
 [Serializable]
 public class GenerationStorable {
-
+    //Liste der Individuen
     public List<IndividualStorable> individuals;
 
     public GenerationStorable() { }
@@ -20,6 +21,7 @@ public class GenerationStorable {
         }
     }
 
+    //Gibt die beste Fitness der Generation zurück
     public int GetBestIndividualFitness()
     {
         int bestFitness = individuals[0].fitness;
@@ -35,6 +37,7 @@ public class GenerationStorable {
         return bestFitness;
     }
 
+    //Gibt die gesamte Fitness aler Individduen zurück
     public int GetGenerationFitness()
     {
         int generationFitness = 0;
@@ -47,6 +50,7 @@ public class GenerationStorable {
         return generationFitness;
     }
 
+    //Gibt die durchschnittliche Fitness der Individuen zurück
     public int GetAverageIndividualFitness()
     {
         float totalIndividualFitness = 0;
@@ -61,6 +65,7 @@ public class GenerationStorable {
         return Mathf.RoundToInt(totalIndividualFitness);
     }
 
+    //Gibt die Erfolgsrate der Generation zurück
     internal double GetSuccessRate()
     {
         int finished = 0;

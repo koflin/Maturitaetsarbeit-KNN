@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Diese Klasse ist ein Speicherbehälter eines Individuums
 [Serializable]
 public class IndividualStorable {
 

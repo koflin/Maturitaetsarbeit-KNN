@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static MenuManager;
 
+//Diese Klasse steuert das Statistik Menu
 public class StatisticMenuManager : MonoBehaviour {
 
     public GameObject modeSelection;
@@ -18,27 +19,34 @@ public class StatisticMenuManager : MonoBehaviour {
 
     List<AI> ais;
 
+    //Wird beim Start ausgeführt
     private void Start()
     {
         statisticManager = GetComponent<StatisticManager>();
 
+        //Hole jede KI
         ais = AI.GetAll();
 
         List<Dropdown.OptionData> aiOptions = new List<Dropdown.OptionData>();
         foreach (AI ai in ais)
         {
+            //Generiere eine Dropdown Option für jede KI
             aiOptions.Add(new Dropdown.OptionData(ai.name));
         }
 
+        //Generiere eine Dropdown Option für die Modi "One AI" und "All AI"
         modeSelection.GetComponent<Dropdown>().AddOptions(new List<Dropdown.OptionData>() { new Dropdown.OptionData("One AI"), new Dropdown.OptionData("All AIs") });
 
         aiSelection.GetComponent<Dropdown>().AddOptions(aiOptions);
 
+        //Generiere für jeden Statistik Modi eine Dropdown Option
         criteriaSelection.GetComponent<Dropdown>().AddOptions(new List<Dropdown.OptionData>() { new Dropdown.OptionData("Average Fitness"), new Dropdown.OptionData("Best Fitness"), new Dropdown.OptionData("Successrate") });
 
+        //Aktualsiere die Session Dropdown Optionen
         RefreshSessionOption(0);
     }
 
+    //Lade Statistiken
     public void LoadStatistics()
     {
         if (onlyOneAI)
@@ -66,6 +74,7 @@ public class StatisticMenuManager : MonoBehaviour {
 
     public void RefreshOptions(int newModeOption)
     {
+        //Wenn der Modus "One AI" genommen wird werden noch Session und KI Optionen aktiviert
         if (newModeOption == 0)
         {
             onlyOneAI = true;
@@ -81,6 +90,7 @@ public class StatisticMenuManager : MonoBehaviour {
         }
     }
 
+    //Jede KI hat andere Session, lade diese im Menu
     public void RefreshSessionOption(int newAIOption)
     {
         sessionSelection.GetComponent<Dropdown>().ClearOptions();
@@ -94,6 +104,7 @@ public class StatisticMenuManager : MonoBehaviour {
         sessionSelection.GetComponent<Dropdown>().AddOptions(sessionOptions);
     }
 
+    //Gehe zum Hauptmenu zurück
     public void Back()
     {
         SceneManager.LoadScene((int)SceneNumber.MENU_MAIN);

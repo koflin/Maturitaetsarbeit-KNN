@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Diese Klasse ist ein Speicherbehälter einer Zeitangabe
 [Serializable]
 public class Time {
 

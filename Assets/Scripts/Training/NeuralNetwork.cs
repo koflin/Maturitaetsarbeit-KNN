@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+//Diese Klasse stellt ein NN dar
 public class NeuralNetwork {
 
     public List<int> neuronAmounts;
@@ -130,6 +131,5 @@ public class NeuralNetwork {
     public void DebugNN()
     {
         string objectString = JsonMapper.ToJson(this);
-        Debug.Log(objectString);
     }
 }

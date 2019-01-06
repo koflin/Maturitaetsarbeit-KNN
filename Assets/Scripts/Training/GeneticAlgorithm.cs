@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+//Diese Klasse stellt den GA dar, sie ist die wichtigste Klasse und steurt den Trainingsvorgang
 public class GeneticAlgorithm : MonoBehaviour {
 
     [Header("NN Settings")]
@@ -46,10 +47,12 @@ public class GeneticAlgorithm : MonoBehaviour {
                 CharController cc = individual.GetGameObject().GetComponent<CharController>();
                 List<double> distances = cc.CalculateDistances();
 
+                //Bewege die Individuen falls sich noch nicht gecrashed sind
                 if (!cc.IsCrashed())
                 {
                     cc.Move((float)nn.ComputeOutput(distances));
 
+                    //Falls die Individuen fertig sind bekommen sie einen Fitness skalierer
                     if (cc.HasFinished())
                     {
                         individual.fitness += ComputeFitness(cc.CalculateDistances()) * successMultiplier;
@@ -76,7 +79,7 @@ public class GeneticAlgorithm : MonoBehaviour {
         path = course.transform.GetChild(0).GetComponent<Tilemap>();
     }
 
-    //WIrd aufgerufen sobald die Runde starten soll
+    //Wird aufgerufen sobald die Runde starten soll
     public void OnStart(AI ai)
     {
         this.ai = ai;
@@ -84,13 +87,11 @@ public class GeneticAlgorithm : MonoBehaviour {
 
         if (ai.trainingSessions.Count == 0)
         {
-            Debug.Log("GENERATE RANDOM");
             GenerateRandomPopulation();
         }
 
         else
         {
-            Debug.Log("GENERATE FROM POP");
             GeneratePopulation(ai.GetNNs());
         }
 
@@ -108,13 +109,7 @@ public class GeneticAlgorithm : MonoBehaviour {
 
         if (finished)
         {
-            Debug.Log("Individual " + physicalIndividual.GetInstanceID() + " has finished");
             thisIndividual.hasFinished = true;
-        }
-
-        else
-        {
-            Debug.Log("Individual " + physicalIndividual.GetInstanceID() + " has crashed with fitness " + thisIndividual.fitness);
         }
 
         //Prüfen ob alle Individuen verunfallt sind
@@ -135,16 +130,12 @@ public class GeneticAlgorithm : MonoBehaviour {
             {
                 //Weiterentwickeln der Population
                 Evolve();
-
-                Debug.Log("Evolving...");
             }
 
             //Wenn die maximale Generationenanzahl erreicht wurde (Ende) oder man sich im Test Modus befindet
             else
             {
                 Finish();
-
-                Debug.Log("Finished...");
             }
         }
     }

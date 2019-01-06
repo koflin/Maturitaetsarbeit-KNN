@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Diese Klasse stellt das Chromosom dar
 public class Chromosome {
 
+    //Die DNA auf dem Chromosom
 	public double[] DNA;
 
+    //Zufällige DNA
     public Chromosome(int size)
     {
         DNA = new double[size];
@@ -17,6 +20,7 @@ public class Chromosome {
         }
     }
 
+    //Vorgegebenen DNA
     public Chromosome(double[] DNA)
     {
         this.DNA = DNA;

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+//Diese Klasse steuert die generierte Grafik
 public class GraphicManager : MonoBehaviour {
 
     [Header("Prefabs")]
@@ -37,6 +38,7 @@ public class GraphicManager : MonoBehaviour {
     {
     }
 
+    //Zeige die gnazen Daten in dem Koordinatensystem
     public void ShowData(string xLabel, string yLabel, IDictionary<double, double> data)
     {
         this.xLabel = xLabel;
@@ -48,6 +50,7 @@ public class GraphicManager : MonoBehaviour {
         maxX = 0;
         maxY = 0;
 
+        //Beschrifte jeden Messwert mit dessen gerundeten Zahlen
         foreach (KeyValuePair<double, double> point in data)
         {
             Debug.Log(point.Key + " | " + point.Value);
@@ -69,6 +72,7 @@ public class GraphicManager : MonoBehaviour {
         GeneratePoints();
     }
 
+    //Zeigt die Punkt Werte an wenn darauf geklickt wurde
     public void PointClicked(int index)
     {
         if (currentPoint != -1)
@@ -82,6 +86,7 @@ public class GraphicManager : MonoBehaviour {
         currentPoint = index;
     }
 
+    //Generiere skalierte Achsen
     private void GenerateAxisMarks()
     {
         xAxis.transform.GetChild(0).GetComponent<Text>().text = xLabel;
@@ -131,6 +136,7 @@ public class GraphicManager : MonoBehaviour {
         }
     }
 
+    //Generiere die Punkte im Kooodinatensystem
     private void GeneratePoints()
     {
         int index = 0;
@@ -153,6 +159,7 @@ public class GraphicManager : MonoBehaviour {
         }
     }
 
+    //Lösche die Achsen und Punkte
     private void ClearAxisAndPoints()
     {
         foreach (GameObject xMark in xMarks)

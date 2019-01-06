@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+//Diese Klasse ist ein Speicherbehälter einer Trainings Session
 [Serializable]
 public class TrainingSession {
 

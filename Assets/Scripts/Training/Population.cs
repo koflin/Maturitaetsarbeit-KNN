@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Diese Klasse stellt eine Population dar
 public class Population {
 
+    //Liste der Inviduen der Population
     public List<Individual> individuals;
 
+    //Gibt die KNNs der Inviduen zurück
     public List<NeuralNetwork> GetNNs()
     {
+
         List<NeuralNetwork> nns = new List<NeuralNetwork>();
         foreach (Individual individual in individuals)
         {
@@ -27,6 +31,7 @@ public class Population {
         this.individuals = individuals;
     }
     
+    //Ermittelt das Inviduum anhand seiner physischen Instanz
     public Individual GetIndividualByGameObject(GameObject gameObject)
     {
         foreach (Individual individual in individuals)

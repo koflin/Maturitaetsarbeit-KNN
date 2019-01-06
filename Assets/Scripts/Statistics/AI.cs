@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+//Diese Klasse ist ein Speicherbehälter der KI
 [Serializable]
 public class AI  {
 
@@ -34,6 +35,7 @@ public class AI  {
         this.trainingSessions = new List<TrainingSession>();
     }
 
+    //Zurückgeben aller KNNs der KI
     public List<NeuralNetwork> GetNNs()
     {
         TrainingSession latestTrainingSession = trainingSessions[trainingSessions.Count - 1];

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+//Diese Klasse steurert das Training
 public class TrainingController : MonoBehaviour {
 
     public static bool manual;
@@ -13,17 +14,18 @@ public class TrainingController : MonoBehaviour {
     public GameObject coursePrefab;
     public GameObject course;
 
-	// Use this for initialization
+	//Wird beim Start aufgerufen
 	void Start () {
+        //Instanziiert den Parcours
         coursePrefab = Resources.Load<GameObject>("Courses/" + courseId);
         course = Instantiate(coursePrefab);
 
+        //Lädt den GA und startet ihn
         if (!MenuManager.manual)
         {
             GeneticAlgorithm ga = GetComponent<GeneticAlgorithm>();
 
             ga.OnCourseLoaded(courseId, course);
-            Debug.Log("ON START");
             ga.OnStart(ai);
         }
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Diese Klasse stellt ein Neuron dar
 public abstract class Neuron {
 
     public List<double> weights;

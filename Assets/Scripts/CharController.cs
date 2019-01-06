@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+//Diese Klasse steuert das Inviduum und ist die zweit wichtigste Klasse
 public class CharController : MonoBehaviour {
 
     public GeneticAlgorithm geneticAlgorithm;
@@ -24,7 +25,7 @@ public class CharController : MonoBehaviour {
     public bool finished = false;
     public bool crashed = false;
 
-    //Urückgeben ob der Charakter einen Unfall hatte
+    //Zurückgeben ob der Charakter einen Unfall hatte
     public bool IsCrashed()
     {
         return crashed;
@@ -35,6 +36,7 @@ public class CharController : MonoBehaviour {
         return finished;
     }
 
+    //Wird beim Start aufgerufen
 	void Start () {
         charController = GetComponent<CharacterController>();
         charController.detectCollisions = false;
@@ -42,14 +44,16 @@ public class CharController : MonoBehaviour {
         animator = GetComponent<Animator>();
 	}
 	
+    //Wird bei jedem Bildupdate aufgerufen
 	void Update ()
     {
+        //Wenn der Charakter noch nicht gecrashed oder fertig ist
         if (!crashed && !finished)
         {
             //tilemap.SetTile(new Vector3Int((int)Mathf.Floor(transform.position.x), (int)Mathf.Floor(transform.position.y), 0), debugTile);
             TileBase tileBase = tilemap.GetTile(new Vector3Int((int)Mathf.Floor(transform.position.x), (int)Mathf.Floor(transform.position.y), 0));
 
-
+            //Wenn der Charakter ausserhalb des Spielfelds ist, gilt er als gecrashed
             if (tileBase == null)
             {
                 if (!manual)
@@ -60,6 +64,7 @@ public class CharController : MonoBehaviour {
                 crashed = true;
             }
 
+            //Wenn der Charakter die Zielfläche erreicht hat hat er es geschafft
             else if (tileBase.name == "Finish")
             {
                 if (!manual)
@@ -106,20 +111,14 @@ public class CharController : MonoBehaviour {
     //Messen der Richtungsabstände
     public List<double> CalculateDistances()
     {
-        //It is important to call the raycast in FixedUpdate because of the fixed Interval!
-        //Raycast Right
         RaycastHit2D right = CheckRaycastHit(transform.TransformDirection(new Vector2(1, 0)));
 
-        //Raycast Right Front
         RaycastHit2D rightFront = CheckRaycastHit(transform.TransformDirection(new Vector2(1, 1)));
 
-        //Raycast Front
         RaycastHit2D front = CheckRaycastHit(transform.TransformDirection(new Vector2(0, 1)));
 
-        //Raycast Left Front
         RaycastHit2D leftFront = CheckRaycastHit(transform.TransformDirection(new Vector2(-1, 1)));
 
-        //Raycast Left
         RaycastHit2D left = CheckRaycastHit(transform.TransformDirection(new Vector2(-1, 0)));
 
         return new List<double> { GetRaycastHitValue(left), GetRaycastHitValue(leftFront), GetRaycastHitValue(front), GetRaycastHitValue(rightFront), GetRaycastHitValue(right) };

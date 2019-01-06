@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Diese Klasse steuert die Statistik
 public class StatisticManager : MonoBehaviour {
 
     public GameObject graphic;
 
+    //Lade Statistiken nach Modus
 	public void LoadOneStatistic(TrainingSession trainingSession, int statType)
     {
-        Debug.Log("LOAD");
         string xLabel = "";
         string yLabel = "";
         IDictionary<double, double> stats = new Dictionary<double, double>();
@@ -47,9 +48,9 @@ public class StatisticManager : MonoBehaviour {
         graphic.GetComponent<GraphicManager>().ShowData(xLabel, yLabel, stats);
     }
 
+    //Lade durchschnittliche Statistiken nach Modus
     public void LoadAllStatistics(List<TrainingSession> trainingSessions, int statType)
     {
-        Debug.Log("LOAD");
         string xLabel = "";
         string yLabel = "";
         IDictionary<double, double> stats = new Dictionary<double, double>();

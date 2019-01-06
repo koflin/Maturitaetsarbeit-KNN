@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Diese Klasse stellt ein Ausgabe Neuron dar
 public class OutputNeuron : Neuron
 {
     public OutputNeuron(List<double> weights, double bias) : base(weights, bias)

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Diese Klasse stellt ein Verstecktes Neuron dar
 public class HiddenNeuron : Neuron {
 
     public HiddenNeuron(List<double> weights, double bias) : base(weights, bias)

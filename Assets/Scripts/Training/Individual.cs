@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Diese Klasse stellt ein Individuum dar
 public class Individual {
 
     private GameObject gameObject;
@@ -22,21 +23,25 @@ public class Individual {
         this.gameObject = gameObject;
     }
 
+    //Ermittelt ob das Individuum fertig ist
     public bool HasFinished()
     {
         return hasFinished;
     }
 
+    //Gibt das physische Individuum zurück
     public GameObject GetGameObject()
     {
         return gameObject;
     }
 
+    //Gibt die Fitness zurück
     public int GetFitness()
     {
         return (int)fitness;
     }
 
+    //Rundet die Fitness des Inviduums
     public void RoundFitness()
     {
         fitness = Mathf.RoundToInt((float)fitness);
